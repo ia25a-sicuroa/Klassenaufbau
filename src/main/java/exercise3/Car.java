@@ -1,8 +1,8 @@
 package exercise3;
 
 public class Car {
-  public int fuelLevel;
-  public int mileage;
+  public double fuelLevel;
+  public double mileage;
   public String licensePlate;
   public double fuelConsumption;
   public double fuelCapacity;
@@ -11,7 +11,7 @@ public class Car {
   //declare vars
 
   //Create constructor
-    public Car(String licensePlate, int fuelLevel, int mileage, double fuelConsumption, double fuelCapacity) {
+    public Car(String licensePlate, double fuelLevel, double mileage, double fuelConsumption, double fuelCapacity) {
       this.licensePlate = licensePlate;
       this.fuelConsumption = fuelConsumption;
       this.fuelCapacity = fuelCapacity;
@@ -20,22 +20,39 @@ public class Car {
 
     }
 
+        public void drive(int distance) {
+            //do stuff
+            double maxdistance = fuelLevel / fuelConsumption;
+            System.out.println("Max distance: " + maxdistance);
+            double distanceToDrive = distance;
+            System.out.println(fuelLevel);
+            if(distance > maxdistance){
+                distanceToDrive =maxdistance;
+            }
+            this.fuelLevel -= distanceToDrive * this.fuelConsumption;
+            this.mileage = Math.round ((this.mileage + distanceToDrive) * 100.0) / 100.0;
+            if (this.fuelLevel < 0) {
+                this.fuelLevel = 0;
 
-    public void drive(int distance) {
-    //do stuff
+            }
+        }
 
+        public void refuel(int amount) {
+            //do
+            this.fuelLevel = fuelLevel + amount;
 
-  }
+        }
 
-  public void refuel(int amount) {
-    //do stuff
-  }
-
-  //add toString
-    public String toString(){
-
-        return "";
+        //add toString
+        public String toString(){
+            return "Car{" +
+                    "licensePlate='" + licensePlate + '\'' +
+                    ", mileage=" + mileage +
+                    ", fuelConsumption=" + fuelConsumption +
+                    ", fuelCapacity=" + fuelCapacity +
+                    ", fuelLevel=" + fuelLevel +
+                    '}';
+        }
     }
 
 
-}
