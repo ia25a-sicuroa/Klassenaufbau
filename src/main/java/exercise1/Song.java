@@ -18,13 +18,13 @@ public class Song {
       //Change seconds into X Minuten x Sekunden
             int minutes = duration / 60;
             int seconds = duration % 60;
-            return minutes + " minutes and " + seconds + " seconds";
+            return minutes + " Minuten " + seconds + " Sekunden";
         }
 
 
     @Override
     public String toString() {
         //Change toString Method output
-        return "The song " + titel + " from " + artist + " is " + songTime() + " long.";
+        return "The song " + titel + " from " + artist + " is " + duration + " seconds long";
     }
 }

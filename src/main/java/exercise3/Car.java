@@ -4,18 +4,27 @@ public class Car {
   public int fuelLevel;
   public int mileage;
   public String licensePlate;
-  public String fuelConsumption;
-  public String fuelCapacity;
+  public double fuelConsumption;
+  public double fuelCapacity;
 
-  public Car(String zh420, int i, int i1, double v, int i2) {
-  }
 
   //declare vars
 
   //Create constructor
+    public Car(String licensePlate, int fuelLevel, int mileage, double fuelConsumption, double fuelCapacity) {
+      this.licensePlate = licensePlate;
+      this.fuelConsumption = fuelConsumption;
+      this.fuelCapacity = fuelCapacity;
+      this.mileage = mileage;
+      this.fuelLevel = fuelLevel;
 
-  public void drive(int distance) {
+    }
+
+
+    public void drive(int distance) {
     //do stuff
+
+
   }
 
   public void refuel(int amount) {
@@ -23,4 +32,10 @@ public class Car {
   }
 
   //add toString
+    public String toString(){
+
+        return "";
+    }
+
+
 }
