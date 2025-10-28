@@ -16,12 +16,15 @@ public class Song {
 
     public String songTime() {
       //Change seconds into X Minuten x Sekunden
-      return "";
-    }
+            int minutes = duration / 60;
+            int seconds = duration % 60;
+            return minutes + " minutes and " + seconds + " seconds";
+        }
+
 
     @Override
     public String toString() {
         //Change toString Method output
-        return "";
+        return "The song " + titel + " from " + artist + " is " + songTime() + " long.";
     }
 }

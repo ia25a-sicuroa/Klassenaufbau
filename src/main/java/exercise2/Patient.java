@@ -9,5 +9,9 @@ public class Patient {
     //TODO: Add Getter and Setter Methods
 
     //TODO: Add toString Method
+    public String toString() {
+
+        return "";
+    }
 
 }
